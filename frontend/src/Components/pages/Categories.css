@@ -1,0 +1,51 @@
+/* Wrapper container */
+.categories-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Main heading */
+.categories-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* Category buttons container */
+.categories-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Category button style */
+.categories-buttons button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.categories-buttons button:hover {
+  background-color: #449d48;
+  transform: translateY(-3px);
+}
+
+/* Active category button */
+.categories-buttons button.active {
+  background-color: #2e7d32;
+  transform: scale(1.05);
+}

@@ -1,0 +1,81 @@
+.manage-cat-container {
+  width: 70%;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.1);
+}
+
+.manage-cat-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.cat-message {
+  background: #dff0d8;
+  padding: 10px;
+  border-radius: 5px;
+  color: #3c763d;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.cat-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.cat-form input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.cat-form button {
+  padding: 12px 18px;
+  background: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cat-form button:hover {
+  background: #004ecc;
+}
+
+.cat-list {
+  margin-top: 20px;
+}
+
+.cat-item {
+  display: flex;
+  justify-content: space-between;
+  background: #f8f8f8;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 5px;
+}
+
+.cat-item span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.cat-item button {
+  background: red;
+  border: none;
+  padding: 8px 12px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cat-item button:hover {
+  background: #b80000;
+}
