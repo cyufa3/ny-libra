@@ -9,24 +9,30 @@ function Home() {
   const [loading, setLoading] = useState(false);
 
   // Fetch all books initially
-  const fetchBooks = () => {
-    setLoading(true);
-    fetch("http://localhost:5000/api/books")
-      .then((res) => res.json())
-      .then((data) => {
-        setBooks(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching books:", error);
-        setLoading(false);
-      });
-  };
+ const fetchBooks = () => {
+  setLoading(true);
+  fetch("http://localhost:5000/api/books")
+    .then((res) => res.json())
+    .then((data) => {
+      // Shuffle + pick 20 random
+      const random20 = data
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 20);
 
-   // Fetch all books once when app loads
-  useEffect(() => {
+      setBooks(random20);
+      setLoading(false);
+    })
+    .catch((error) => {
+      console.error("Error fetching books:", error);
+      setLoading(false);
+    });
+};
+
+useEffect(() => {
     fetchBooks();
   }, []);
+
+  
   // Handle search
   const handleSearch = (searchTerm) => {
     if (!searchTerm.trim()) {

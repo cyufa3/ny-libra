@@ -1,7 +1,7 @@
 /* Wrapper container */
 .categories-container {
-  max-width: 900px;
-  margin: 40px auto;
+  max-width: 1500px;
+  
   padding: 25px;
   background: #ffffff;
   border-radius: 10px;
@@ -12,7 +12,7 @@
 /* Main heading */
 .categories-container h2 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #333;
   margin-bottom: 25px;
