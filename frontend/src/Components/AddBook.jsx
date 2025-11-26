@@ -16,7 +16,7 @@ function AddBook() {
 
   // Load categories from backend
   useEffect(() => {
-    fetch("http://localhost:5000/api/books/categories")
+    fetch("https://ny-libra.onrender.com/api/books/categories")
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) setCategories(data);
@@ -37,7 +37,7 @@ function AddBook() {
     setError("");
     setMessage("");
 
-    fetch("http://localhost:5000/api/books", {
+    fetch("https://ny-libra.onrender.com/api/books", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),

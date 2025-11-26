@@ -8,7 +8,7 @@ function ManageCategories() {
 
   // Fetch categories
   const fetchCategories = () => {
-    fetch("http://localhost:5000/api/categories")
+    fetch("https://ny-libra.onrender.com/api/categories")
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((err) => console.error(err));
@@ -22,7 +22,7 @@ function ManageCategories() {
   const handleAdd = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:5000/api/categories", {
+    fetch("https://ny-libra.onrender.com/api/categories", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: newCategory }),
@@ -38,7 +38,7 @@ function ManageCategories() {
 
   // Delete Category
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/api/categories/${id}`, {
+    fetch(`https://ny-libra.onrender.com/api/categories/${id}`, {
       method: "DELETE",
     })
       .then(() => {

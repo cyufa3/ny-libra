@@ -26,7 +26,7 @@ function Categories() {
 
   // Fetch all categories
   useEffect(() => {
-    fetch("http://localhost:5000/api/books/categories")
+    fetch("https://ny-libra.onrender.com/api/books/categories")
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) setCategories(data);
@@ -36,7 +36,7 @@ function Categories() {
 
   const handleCategoryClick = (category) => {
     setLoading(true);
-    fetch(`http://localhost:5000/api/books?category=${encodeURIComponent(category)}`)
+    fetch(`https://ny-libra.onrender.com/api/books?category=${encodeURIComponent(category)}`)
       .then((res) => res.json())
       .then((data) => {
         setBooks(data);

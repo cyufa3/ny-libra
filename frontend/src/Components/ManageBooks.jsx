@@ -7,7 +7,7 @@ function ManageBooks() {
 
   // Load all books on page load
   useEffect(() => {
-    fetch("http://localhost:5000/api/books")
+    fetch("https://ny-libra.onrender.com/api/books")
       .then((res) => res.json())
       .then((data) => {
         setBooks(data);
@@ -20,7 +20,7 @@ function ManageBooks() {
   const handleDelete = (id) => {
     if (!window.confirm("Are you sure you want to delete this book?")) return;
 
-    fetch(`http://localhost:5000/api/books/${id}`, {
+    fetch(`https://ny-libra.onrender.com/api/books/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

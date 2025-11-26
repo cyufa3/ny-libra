@@ -11,7 +11,7 @@ function Home() {
   // Fetch all books initially
  const fetchBooks = () => {
   setLoading(true);
-  fetch("http://localhost:5000/api/books")
+  fetch("https://ny-libra.onrender.com/api/books")
     .then((res) => res.json())
     .then((data) => {
       // Shuffle + pick 20 random
@@ -41,7 +41,7 @@ useEffect(() => {
     }
 
     setLoading(true);
-    fetch(`http://localhost:5000/api/books/search?q=${encodeURIComponent(searchTerm)}`)
+    fetch(`https://ny-libra.onrender.com/api/books/search?q=${encodeURIComponent(searchTerm)}`)
       .then((res) => res.json())
       .then((data) => {
         setBooks(data);

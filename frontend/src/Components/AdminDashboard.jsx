@@ -7,13 +7,13 @@ function AdminDashboard() {
 
   useEffect(() => {
     // Fetch total books
-    fetch("http://localhost:5000/api/books/count")
+    fetch("https://ny-libra.onrender.com/api/books/count")
       .then((res) => res.json())
       .then((data) => setTotalBooks(data.count))
       .catch((err) => console.error("Error loading book count:", err));
 
     // Fetch total categories
-    fetch("http://localhost:5000/api/books/categories")
+    fetch("https://ny-libra.onrender.com/api/books/categories")
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) setTotalCategories(data.length);
