@@ -21,10 +21,10 @@ function NavBar() {
             <img src={logo} className='logo' />
              <ul className='sidebar'>
                  <button onClick={hideSidebar} className='search-btn'>close</button>
-            <li ><Link to="/">Home</Link></li>
-            <li ><Link to="/categories">Categories</Link></li>
-            <li ><Link to="/contact">Contact us</Link></li>
-            <li ><Link to="/about">About us</Link></li>
+            <li onClick={hideSidebar}><Link to="/">Home</Link></li>
+            <li onClick={hideSidebar}><Link to="/categories">Categories</Link></li>
+            <li onClick={hideSidebar}><Link to="/contact">Contact us</Link></li>
+            <li onClick={hideSidebar}><Link to="/about">About us</Link></li>
                
                 
             </ul>
