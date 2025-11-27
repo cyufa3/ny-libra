@@ -1,5 +1,6 @@
 import express from "express";
 import Book from "../models/Book.js";
+import mongoose from "mongoose";
 
 const router = express.Router();
 // GET all books or by category
@@ -64,6 +65,9 @@ router.get("/:id", async (req, res) => {
     res.json(book);
   } catch (err) {
     res.status(500).json({ message: err.message });
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+  return res.status(400).json({ message: "Invalid book ID" });
+}
   }
 });
 
@@ -104,21 +108,5 @@ router.delete("/:id", async (req, res) => {
 });
 
 
-// POST /api/contact
-router.post("/", async (req, res) => {
-  const { name, email, message } = req.body;
-
-  if (!name || !email || !message) {
-    return res.status(400).json({ message: "All fields are required." });
-  }
-
-  try {
-    const newMessage = new Contact({ name, email, message });
-    const savedMessage = await newMessage.save();
-    res.status(201).json({ message: "Message sent successfully!", data: savedMessage });
-  } catch (err) {
-    res.status(500).json({ message: "Server error" });
-  }
-});
 
 export default router;
