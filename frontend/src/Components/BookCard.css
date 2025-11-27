@@ -52,3 +52,26 @@
 .view-btn:hover {
   background-color: #0056b3;
 }
+
+@media (max-width: 767px) {
+  .book-card {
+    width: 40%;
+
+  }
+  .book-info {
+  padding: 1opx;
+  
+}
+
+.book-title {
+  font-size: 0.6rem;
+  
+}
+
+.book-author,
+.book-ref {
+  font-size: 0.6rem;
+  
+}
+
+}
