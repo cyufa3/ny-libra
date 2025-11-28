@@ -20,6 +20,7 @@ function App() {
     <div>
       <Router>
         <NavBar /> 
+        <main>
 
         <Routes>
           <Route path="/" element={<Home />} />
@@ -31,6 +32,7 @@ function App() {
           <Route path="/manage-books" element={<ManageBooks />} />
           <Route path="/manage-categories" element={<ManageCategories/>} />
         </Routes>
+        </main>
 
         <Footer />
       </Router>

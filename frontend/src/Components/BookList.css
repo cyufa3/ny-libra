@@ -1,8 +1,15 @@
+
+
 .book-list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+
   padding: 5px;
-  background-color: #f4f4f4;
+  background: #f4f4f4;
+  margin-bottom: 100px;
+
+  /* Let it grow naturally */
+  height: auto;
 }

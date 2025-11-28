@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect,useRef, useState } from "react";
 import BookList from "../BookList";
 import Sidebar from "../Sidebar";
 import "./Categories.css";
+
+
 
 function Categories() {
   const [categories, setCategories] = useState([]);
@@ -9,6 +11,10 @@ function Categories() {
   const [loading, setLoading] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  const sidebarRef = useRef();
+
 
   // Detect screen size
   useEffect(() => {
@@ -51,6 +57,7 @@ function Categories() {
   }, []);
 
   const handleCategoryClick = (category) => {
+     setSelectedCategory(category); 
     setLoading(true);
     setShowSidebar(false);
 
@@ -71,6 +78,23 @@ function Categories() {
       });
   };
 
+  // Close sidebar when clicking outside
+useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (
+      showSidebar && 
+      sidebarRef.current && 
+      !sidebarRef.current.contains(event.target)
+    ) {
+      setShowSidebar(false);
+    }
+  };
+
+  document.addEventListener("click", handleClickOutside);
+  return () => document.removeEventListener("click", handleClickOutside);
+}, [showSidebar]);
+
+
   return (
     <div className="categories-page" style={{ display: "flex" }}>
       {/* Sidebar toggle button for mobile */}
@@ -84,7 +108,7 @@ function Categories() {
       )}
 
       {/* Sidebar */}
-      <div className={`sidebar1 ${showSidebar ? "visible" : "hidden"}`}>
+      <div   className={`sidebar1 ${showSidebar ? "visible" : "hidden"}`}>
         <Sidebar categories={categories} onSelect={handleCategoryClick} />
       </div>
 
@@ -105,7 +129,9 @@ function Categories() {
         )}
 
         <h3 style={{ marginTop: "30px", textAlign: "center" }}>
-          Books in selected category
+          {selectedCategory
+    ? `Books in "${selectedCategory}" category`
+    : "Select a category to view books"}
         </h3>
 
         {loading ? (
