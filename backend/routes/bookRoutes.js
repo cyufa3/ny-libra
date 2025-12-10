@@ -31,9 +31,11 @@ router.get("/search", async (req, res) => {
     // Case-insensitive partial match on multiple fields
     const books = await Book.find({
       $or: [
-        { title: { $regex: query, $options: "i" } },
-        { auteur: { $regex: query, $options: "i" } },
-        { ref: { $regex: query, $options: "i" } },
+        { title: { $regex: regex } },
+        { auteur: { $regex: regex } },
+        { author: { $regex: regex } },
+        { ref:    { $regex: regex } },
+        { code:   { $regex: regex } }
       ],
     });
 
