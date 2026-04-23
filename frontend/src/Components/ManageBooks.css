@@ -1,0 +1,67 @@
+.manage-books-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.manage-books-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.no-books {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* TABLE */
+.books-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.books-table th,
+.books-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.books-table th {
+  background: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+
+.books-table tr:hover {
+  background: #f1f1f1;
+}
+
+.desc {
+  max-width: 300px;
+  color: #555;
+}
+
+/* DELETE BUTTON */
+.delete-btn {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: #c9302c;
+}

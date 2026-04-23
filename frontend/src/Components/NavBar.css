@@ -1,0 +1,95 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: beige;
+  position: fixed; /* fixed at top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* stay above other content */
+  padding: 0 20px; 
+  height: 60px; /* adjust height */
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.logo {
+  width: 10%;
+}
+
+.navb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.navbar ul li {
+  margin: 20px;
+  border: solid rgb(141, 141, 132);
+  border-radius: 30px;
+  padding: 5px;
+  font-size: 20px;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+
+.navbar ul li:hover {
+  background-color: rgb(233, 233, 196);
+  cursor: pointer;
+}
+
+.menu {
+  padding: 8px 16px;
+  font-size: 1rem;
+  border: 1px solid #007bff;
+  background-color: #007bff;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100vh;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.842);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.sidebar li {
+  width: 100%;
+}
+
+.navb a,
+.sidebar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Hide navbar items on small screens */
+@media(max-width: 800px) {
+  .hidenavbar {
+    display: none;
+  }
+}
+
+/* Hide menu button on large screens */
+@media(min-width: 801px) {
+  .menu {
+    display: none;
+  }
+}
+
+/* Add spacing so content doesn't go under navbar */
+body {
+  padding-top: 60px; /* same as navbar height */
+}
